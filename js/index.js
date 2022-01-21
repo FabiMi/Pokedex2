@@ -9,13 +9,13 @@ let pokemonList = [{
     height: 4,
     type: ["water, stone"]}];
 
-let i = 0;
 
-for (;pokemonList[i];) { // create loop for pokemonList
+
+for (let i = 0; i < pokemonList.length; i++) { // create loop for pokemonList
  let namee = pokemonList[i].name; // get Pokemon Name from pokemonList
  let heightt = pokemonList[i].height; // *get Pokemon height from pokemonList
  let typee = pokemonList[i].type; // get Pokemon type from pokemonList
- i++; 
+ 
 
  if (heightt > 7) {
 
