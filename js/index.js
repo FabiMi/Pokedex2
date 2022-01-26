@@ -1,37 +1,117 @@
-let pokemonList = [{
-    name:  "Bulbasaur",
-    height: 7,
-    type: ["grass, poison"]
-}, {name:  "chamander",
-    height: 8,
-    type: ["fire, stone"]},
-    {name:  "Squirtle",
-    height: 4,
-    type: ["water, stone"]}];
+    
+  let pokemonRepository = (function() {
+        
+
+        let pokemonList = [];
+
+        function add(pokemon) {
+          pokemonList.push(pokemon);
+        }
+        
+        
+        function getAll() {
+          return pokemonList;
+        }
+      
+        return {
+          add: add,
+          getAll: getAll
+        };
+    })
+             
+                
+                function pokemon() {
+
+                    let  pokeList = [{
+                        name:  "Bulbasaur",
+                        height: 7,
+                        type: ["grass, poison"],},
+                        {
+                        name:  "chamander",
+                        height: 8,
+                        type: ["fire, stone"]},
+                        {
+                        name:  "Squirtle",
+                        height: 4,
+                        type: ["water, stone"]}];
+        
+        function getPokeName(name) {
+            return "Name: " + name + "<br>";
+        }
+
+        function getPokeHeight(height) {
+            return "height: " + height + " feed";
+        }
+
+        function getPokeType(type) {
+            return "type: " + type + + " "+ "<br>"+ "<br>";
+        }
+
+        function getPokemon(poke) {
+            let pokeName = getPokeName(poke.name);
+            let pokeHeight = getPokeHeight(poke.height);
+            let pokeType = getPokeType(poke.type);
+        
+            
+            
+
+
+        if (pokeList.height > 7) {
+       
+           document.write(pokeName + pokeHeight + "<-wow thats big!!!!, " + pokeType); // let loop appear with if in site
+          
+          } 
+       else {
+           document.write(pokeName +  pokeHeight + pokeType);
+          
+       }
+    } 
+    pokeList.forEach(pokemon);       
+   
+    getPokemon(); 
+
+
+}
+
+
+            
+ pokemon();               
+ 
+     
+
+  // pokemonRepository ();
 
 
 
-for (let i = 0; i < pokemonList.length; i++) { // create loop for pokemonList
+
+  
+
+//};
+
+/*
+ for (let i = 0; i < pokemonList.length; i++) { // create loop for pokemonList
  let namee = pokemonList[i].name; // get Pokemon Name from pokemonList
  let heightt = pokemonList[i].height; // *get Pokemon height from pokemonList
  let typee = pokemonList[i].type; // get Pokemon type from pokemonList
- 
+
 
  if (heightt > 7) {
 
-    document.write("name: " + namee + ", " + "height: (" + heightt + ")<-wow thats big!!!!, " + "type: " + typee + " "); // let loop appear with if in site
+    document.write("name: " + namee + ", " + "<br>" + "height: (" + heightt + ")<-wow thats big!!!!, " + "<br>" + "type: " + typee + " " + "<br>"+"<br>" ); // let loop appear with if in site
    
    } 
 else {
-    document.write("name: " + namee + ", " + "height: (" + heightt + "), " + "type: " + typee + " "); // let loop appear in site
-
+    document.write("name: " + namee + ", " + "<br>" + "height: (" + heightt + "), " + "<br>" + "type: " + typee + " "+ "<br>"+ "<br>" ); // let loop appear in site
+    console.log (namee, heightt, typee); // call log for the loop
+}
 }
 
- console.log (namee, heightt, typee); // call log for the loop
+ 
 }
+printArrayDetails();
+printArrayDetails();
 
-
-
+ */
 
 
 
@@ -92,4 +172,17 @@ else
 card.style.backroundColor(brown);
 }
 
+
+    pokemonList = {
+    name:  "Bulbasaur",
+    height: 7,
+    type: ["grass, poison"],},
+    {
+    name:  "chamander",
+    height: 8,
+    type: ["fire, stone"]},
+    {
+    name:  "Squirtle",
+    height: 4,
+    type: ["water, stone"]};
 */
