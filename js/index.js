@@ -39,26 +39,26 @@
              
 
         pokemonRepository.getAll().forEach(pokemon => {
+       /* 
+
+        function getPokeName(pokemon) {
+            return "Name: " + pokemon.name + "<br>";
+        }
+
+        function getPokeHeight(pokemon) {
+            return "height: " + pokemon.height + " feed";
+        }
+
+        function getPokeType (pokemon) {
+            return "type: " + pokemon.type + + " "+ "<br>"+ "<br>";
+        }
+
+        function getPokemon() {
+            let pokeName = getPokeName(pokemon.name);
+            let pokeHeight = getPokeHeight(pokemon.height);
+            let pokeType = getPokeType(pokemon.type);
         
-/*
-        function getPokeName(name) {
-            return "Name: " + name + "<br>";
-        }
-
-        function getPokeHeight(height) {
-            return "height: " + height + " feed";
-        }
-
-        function getPokeType(type) {
-            return "type: " + type + + " "+ "<br>"+ "<br>";
-        }
-
-        function getPokemon(poke) {
-            let pokeName = getPokeName(poke.name);
-            let pokeHeight = getPokeHeight(poke.height);
-            let pokeType = getPokeType(poke.type);
-        
-*/         
+*/       
 
     
 
