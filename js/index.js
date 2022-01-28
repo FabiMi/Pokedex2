@@ -9,7 +9,7 @@
         type: ["grass, poison"],
     },
     {
-        name:  "chamander",
+        name:  "Chamander",
         height: 8,
         type: ["fire, stone"]
     },
@@ -29,47 +29,55 @@
         function getAll() {
           return pokemonList;
         }
+
+       
+
+
+        function addListItem(pokemon){
+
+    // calls the html class pokemon-List    
+            let list = document.querySelector(".pokemon-List");
+
+    // creates list-items inside the list
+            let listItem = document.createElement("li");
+            list.appendChild(listItem);
+
+    // creates button inside the list-items
+            let button = document.createElement("button");
+            listItem.appendChild(button);
+            button.innerText = pokemon.name;
+
+    //add a click event wish runs the showdetails function
+            button.addEventListener("click", function (pokemon) {
+            showDetails(pokemon);
+            });
+
+            };
+    //log the pokemondetails 
+            function showDetails(pokemon){
+                console.log(getAll(pokemon));
+    
+                };
+    
+           
+
+
+
       
 //expose functions to the "outside"        
         return {
+          addListItem: addListItem,
           add: add,
           getAll: getAll
         };
     })();
              
-
-        pokemonRepository.getAll().forEach(pokemon => {
-       /* 
-
-        function getPokeName(pokemon) {
-            return "Name: " + pokemon.name + "<br>";
-        }
-
-        function getPokeHeight(pokemon) {
-            return "height: " + pokemon.height + " feed";
-        }
-
-        function getPokeType (pokemon) {
-            return "type: " + pokemon.type + + " "+ "<br>"+ "<br>";
-        }
-
-        function getPokemon() {
-            let pokeName = getPokeName(pokemon.name);
-            let pokeHeight = getPokeHeight(pokemon.height);
-            let pokeType = getPokeType(pokemon.type);
-        
-*/       
+    pokemonRepository.add({ name: "Pikachu", height: 0.3, types: ["electric"] });
 
     
+        pokemonRepository.getAll().forEach(function (pokemon) {
+        pokemonRepository.addListItem(pokemon);
 
-               
-        if (pokemon.height > 7) {
+
        
-           document.write("Name: " + pokemon.name + "<br>" + "height: " + pokemon.height + " feed" + "<-wow thats big!!!!, " + "<br>" + "type: " + pokemon.type + " " + "<br>"+ "<br>"); // let loop appear with if in site
-          
-          } 
-       else {
-           document.write("Name: " + pokemon.name + "<br>" + "height: " + pokemon.height + " feed" + "<br>" + "type: " + pokemon.type +  " "+ "<br>"+ "<br>");
-          
-       }
     });
