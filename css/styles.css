@@ -24,7 +24,24 @@ ul{
 
 
 }
+.small{
 
+width: 200px;
+height: 200px;
+
+
+}
+
+.pokeimg{
+
+object-fit: inherit;
+
+}
+
+.normal {
+
+    background-color: blue;
+}
 
 button {
     padding: 10px;
