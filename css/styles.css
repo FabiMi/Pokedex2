@@ -4,7 +4,7 @@ background-color: white;
 margin: 0px;
 }
 
-.pokemon-List{
+.pokemon-list{
     display: grid;
     grid-column: 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

@@ -25,7 +25,7 @@
         function addListItem(pokemon){
 
     // calls the html class pokemon-List    
-            let list = document.querySelector(".pokemon-List");
+            let list = document.querySelector(".pokemon-list");
 
     // creates list-items inside the list
             let listItem = document.createElement("li");
@@ -72,6 +72,9 @@
                         let pokemon = {
                           name: item.name,
                           detailsUrl: item.url,
+                          height: item.height,
+                          Type: item.types
+
                           
                         };
                         add(pokemon);
