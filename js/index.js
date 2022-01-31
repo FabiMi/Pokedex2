@@ -24,7 +24,7 @@
 
         function addListItem(pokemon){
 
-    // calls the html class pokemon-List    
+    // calls the html class pokemon-list    
             let list = document.querySelector(".pokemon-list");
 
     // creates list-items inside the list
@@ -36,17 +36,7 @@
             listItem.appendChild(button);
             button.innerText = pokemon.name;
        
-      // tried to get the pictures       
-
-      //     loadDetails(pokemon).then(function () {
-       /*         let imgDiv = document.createElement('div');
-                let pokeimg = document.createElement('img');
-                pokeimg.src = pokemon.imageURL;
-                pokeimg.classList.add('pokeimg');
-        
-                imgDiv.appendChild(pokeimg);
-                button.appendChild(imgDiv);
-          */
+         
    //        changeScale();
            
             
@@ -84,6 +74,7 @@
                     })}
                            
 
+
 //loads the details of the clicked pokmeon
                     function loadDetails(pokemon) {
                         let url = pokemon.detailsUrl;
@@ -98,6 +89,18 @@
                           console.error(e);
                         });
                       }
+
+
+                    loadDetails(pokemon).then(function (poke) {
+                        let imgDiv = document.createElement('div');
+                        let pokeimg = document.createElement('img');
+                        pokeimg.setAttribute('src', poke.imageUrl) // use this to set arc
+                      //  pokeimg.src = poke.imageUrl;
+                        pokeimg.classList.add('pokeimg');
+                        
+                        imgDiv.appendChild(pokeimg);
+                        button.appendChild(imgDiv);
+                    });
                 
 /*
                     function changeScale () {
