@@ -4,6 +4,29 @@ background-color: white;
 margin: 0px;
 }
 
+#pikachu{
+
+height: 100%;
+width: 200px;
+float: right;
+padding-left: 500px;
+}
+
+#pokemon-logo{
+
+    height: 100%;
+    width: 500px;
+    float: left;
+    
+    }
+
+.logo_pikachu{
+display: flex;
+
+}
+
+
+
 .pokemon-list{
     display: grid;
     grid-column: 1fr 1fr 1fr 1fr;
