@@ -5,25 +5,26 @@ margin: 0px;
 }
 
 #pikachu{
-
+position: relative;
 height: 100%;
 width: 200px;
-float: right;
-padding-left: 500px;
 }
 
 #pokemon-logo{
 
     height: 100%;
     width: 500px;
-    float: left;
+    position: relative;
+
+    
     
     }
-
-.logo_pikachu{
-display: flex;
+.pokeDiv:hover{
+    transform: scale(2);
+    transition: 2000ms;
 
 }
+
 
 
 
@@ -54,13 +55,6 @@ height: 200px;
 
 
 }
-
-.pokeimg{
-
-object-fit: inherit;
-
-}
-
 .normal {
 
     background-color: blue;
@@ -73,13 +67,13 @@ button {
   text-align: center;
   border-radius: 15px;
   box-shadow: grey 2px 2px;
-  height: 6rem;
-  width: 6rem;
+  height: 7,5rem;
+  width: 7,5rem;
   font-weight: 700;
 }
 
 .card:hover{
     transition: 500ms;
-    box-shadow: darkgrey 4px 4px;
+    box-shadow: darkgrey 5px 5px;
     transform: translateY(-2px);
 }
