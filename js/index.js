@@ -28,14 +28,26 @@
             let list = document.querySelector(".pokemon-list");
 
     // creates list-items inside the list
-            let listItem = document.createElement("li");
-            list.appendChild(listItem);
+            let listitem = document.createElement("li");
+            list.appendChild(listitem);
 
     // creates button inside the list-items
             let button = document.createElement("button");
-            listItem.appendChild(button);
+            listitem.appendChild(button);
             button.innerText = pokemon.name;
        
+
+            loadDetails(pokemon).then(function(poke) {
+                let imgDiv = document.createElement("div");
+                let pokeimg = document.createElement("img");
+                pokeimg.setAttribute("src", poke.imageUrl) // use this to set arc
+              //  pokeimg.src = poke.imageUrl;
+                pokeimg.classList.add("pokeimg");
+                imgDiv.classList.add("pokeDiv")
+                
+                imgDiv.appendChild(pokeimg);
+                button.appendChild(imgDiv);
+            })
          
    //        changeScale();
            
@@ -85,22 +97,14 @@
                           pokemon.imageUrl = details.sprites.front_default;
                           pokemon.height = details.height;
                           pokemon.types = details.types;
+                            return pokemon
+    
                         }).catch(function (e) {
                           console.error(e);
                         });
-                      }
+                      
+                    }
 
-
-                    loadDetails(pokemon).then(function (poke) {
-                        let imgDiv = document.createElement('div');
-                        let pokeimg = document.createElement('img');
-                        pokeimg.setAttribute('src', poke.imageUrl) // use this to set arc
-                      //  pokeimg.src = poke.imageUrl;
-                        pokeimg.classList.add('pokeimg');
-                        
-                        imgDiv.appendChild(pokeimg);
-                        button.appendChild(imgDiv);
-                    });
                 
 /*
                     function changeScale () {
