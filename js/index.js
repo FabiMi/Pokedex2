@@ -36,12 +36,11 @@
             listitem.appendChild(button);
             button.innerText = pokemon.name;
        
-
+    //creates the image in the button
             loadDetails(pokemon).then(function(poke) {
                 let imgDiv = document.createElement("div");
                 let pokeimg = document.createElement("img");
                 pokeimg.setAttribute("src", poke.imageUrl) // use this to set arc
-              //  pokeimg.src = poke.imageUrl;
                 pokeimg.classList.add("pokeimg");
                 imgDiv.classList.add("pokeDiv")
                 imgDiv.appendChild(pokeimg);
@@ -64,11 +63,15 @@
                     showModal(pokemon);
                 })};
 
-                
+    //creates  the modal elements           
                 function showModal(pokemon) {
                     
                     let modalcon = document.querySelector('#modalcon');
                     let modalContainer = document.createElement('div');  
+                    let profoak = document.createElement('img');
+                    profoak.classList.add("profoak");
+                    profoak.setAttribute("src", "../img/Daco_4578050.png"); 
+
                       modalContainer.classList.add('modal-container');                  
                       modalContainer.innerHTML = '';
                       
@@ -81,23 +84,27 @@
                       closeButtonElement.innerText = 'Close';
                       closeButtonElement.addEventListener('click', hideModal);
                   
+
+
+                      // creates all the Pokemon ELements in the Modal
                       let titleElement = document.createElement('h1');
                       titleElement.innerText = pokemon.name;
-                  
-                
                       let modalimg = document.createElement("img");
-                      modalimg.setAttribute("src", pokemon.imageUrl);
                       modalimg.classList.add("modalimg");
                       let pokestats = document.createElement("div");
                       pokestats.classList.add("pokestats");   
                       let poketype = document.createElement("p");
                       let pokeheight = document.createElement("p");
                       let pokeweight = document.createElement("p");
-                      poketype.innerText = "type: " + pokemon.types ;
-                      pokeheight.innerText = "height: " + pokemon.height;
-                      pokeweight.innerText = "weight: " + pokemon.weight ;
                       
-                  
+                    //fills all the Pokemonelements with content
+                      modalimg.setAttribute("src", pokemon.imageUrl);  
+                      poketype.innerText = "type: " + pokemon.types ;
+                      pokeheight.innerText = "height: " + pokemon.height + " feed";
+                      pokeweight.innerText = "weight: " + pokemon.weight + " lbs";
+                      
+                  //let all the Elements of the Modal append
+                      modalContainer.appendChild(profoak);  
                       modal.appendChild(closeButtonElement);
                       modal.appendChild(titleElement);
                       modal.appendChild(modalimg);
@@ -105,13 +112,25 @@
                       pokestats.appendChild(poketype);
                       pokestats.appendChild(pokeheight);
                       pokestats.appendChild(pokeweight);
+                      
+                      
+                    //let the modal elemenst append
+
                       modalContainer.appendChild(modal);
-                      modalcon.appendChild(modalContainer);
-
-
-                  
-                  
+                      modalcon.appendChild(modalContainer);                      
                       modalContainer.classList.add('is-visible');
+
+
+                      function colorchange(pokemon) {
+                        if (showModal.innerHTML.contains("FIRE")) {
+                            modal.classList.add('red')        
+                        }
+
+
+
+
+
+                    }
                     
                     window.addEventListener('keydown', (e) => {
                         if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
@@ -119,36 +138,33 @@
                         }
                       });
                       modalContainer.addEventListener('click', (e) => {
-                        // Since this is also triggered when clicking INSIDE the modal
-                        // We only want to close if the user clicks directly on the overlay
+                       
                         let target = e.target;
                         if (target === modalContainer) {
                           hideModal();
                         }
                       });
 
-                    let dialogPromiseReject; // This can be set later, by showDialog
-                  
+                   
+                    //hides the modal 
                     function hideModal() {
                       let modalContainer = document.querySelector('.modal-container');
-                      modalContainer.classList.remove('is-visible');
-                      modalContainer.classList.remove('modal-container');
+                     // modalContainer.classList.remove('is-visible');
+                      //modalContainer.classList.remove('modal-container');
+                     // profoak.classList.add("hide");
+                      
+                      modalContainer.parentNode.removeChild(modalContainer);
                   
-                      if (dialogPromiseReject) {
-                        dialogPromiseReject();
-                        dialogPromiseReject = null;
-                      }
-                     
+                 
+                     //hide the modal when clicked the escape button
                       window.addEventListener('keydown', (e) => {
                         if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
                           hideModal();  
                         }
 
-                        
+                     //hide the modal when clicked outside of the modal   
                       });
                       modalContainer.addEventListener('click', (e) => {
-                        // Since this is also triggered when clicking INSIDE the modal
-                        // We only want to close if the user clicks directly on the overlay
                         let target = e.target;
                         if (target === modalContainer) {
                           hideModal();
@@ -168,7 +184,7 @@
 
                 
     
-     //loads the pokemon from th Api      
+     //loads the pokemon Attributes from the Api      
                 function loadList() {
                     return fetch(apiUrl).then(function (response) {
                     return response.json();
@@ -201,7 +217,7 @@
 // add the details 
                           pokemon.imageUrl = details.sprites.front_shiny;
                           pokemon.height = details.height;
-                          pokemon.types = details.types;
+                          pokemon.types = details.types.map((type) => type.type.name).join(', '),
                           pokemon.weight = details.weight
                             return pokemon
     
@@ -211,23 +227,6 @@
                       
                     }
 
-                
-/*
-                    function changeScale () {
-
-                       
-                     
-
-                        if (loadDetails.height < 5) {
-
-                            addListItem.button.innerHTML = '<button id="small"></button>';
-                        }
-                            else {
-
-                            addListItem.button.innerHTML = '<button id="normal"></button>';
-
-                    }}
-*/
 
       
 //expose functions to the "outside"        
