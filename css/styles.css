@@ -90,7 +90,7 @@ button {
     margin: auto;
     display: inline-block;
     box-sizing: border-box;
-    background: #fff;
+   /* background: #fff;*/
     padding: 15px;
     width: 500px;
     max-width: 700px;
@@ -99,7 +99,12 @@ button {
     border-radius: 15px;
     background-color: #f4f4f4;
     box-shadow: grey 2px 2px;
-    border:solid red 5px;
+    border:solid rgb(180, 65, 65) 5px;
+    background: linear-gradient(180deg, #f1c78e, rgb(253, 253, 250));
+
+  }
+  .modal.red{
+    background-color: red;
 
   }
   
@@ -161,6 +166,32 @@ height: 100%;
     margin-bottom: 0px;
     margin-left: 7rem;
     position: absolute;
+}
 
+.pokestats{
+    font-style: oblique;
+    font-weight: 800;
+    color:rgba(0, 0, 0, 0.5);
+    font-variant: small-caps;
+    font-size: 2rem;
+
+
+}
+
+
+.profoak{
+    display: inline-block;
+    height: 16rem;
+    width: auto;
+    position: absolute;
+    right: 5rem;
+    bottom: 6rem;
+
+;
+}
+
+.profoak.hide{
+
+display: none;
 
 }
