@@ -25,14 +25,20 @@
         function addListItem(pokemon){
 
     // calls the html class pokemon-list    
-            let list = document.querySelector(".pokemon-list");
+            let list = document.querySelector(".list-group");
 
     // creates list-items inside the list
             let listitem = document.createElement("li");
+            listitem.classList.add("group-list-item");
             list.appendChild(listitem);
 
     // creates button inside the list-items
             let button = document.createElement("button");
+            button.classList.add("btn");
+            button.classList.add("btn-primary");
+            button.setAttribute('data-toggle', 'modal');
+            button.setAttribute('data-target', '#pokeModal');
+        
             listitem.appendChild(button);
             button.innerText = pokemon.name;
        
@@ -51,8 +57,8 @@
            
             
     //add a click event witch runs the showdetails function
-            
-    button.addEventListener("click", function (event) {
+          
+   /button.addEventListener("click", function (event) {
             showDetails(pokemon);
             });
 
@@ -65,32 +71,22 @@
 
     //creates  the modal elements           
                 function showModal(pokemon) {
-                    
-                    let modalcon = document.querySelector('#modalcon');
-                    let modalContainer = document.createElement('div');  
-                    let profoak = document.createElement('img');
-                    profoak.classList.add("profoak");
-                    profoak.setAttribute("src", "../img/Daco_4578050.png"); 
-
-                      modalContainer.classList.add('modal-container');                  
-                      modalContainer.innerHTML = '';
+                  
                       
 
-                      let modal = document.createElement('div');  
-                      modal.classList.add('modal');
-                  
-                      let closeButtonElement = document.createElement('button');
-                      closeButtonElement.classList.add('modal-close');
-                      closeButtonElement.innerText = 'Close';
-                      closeButtonElement.addEventListener('click', hideModal);
+                
+                    
                   
 
 
                       // creates all the Pokemon ELements in the Modal
-                      let titleElement = document.createElement('h1');
+                      let titleElement = document.getElementById('exampleModalLabel');
                       titleElement.innerText = pokemon.name;
+                      let modalbody= document.getElementById('modal-body')
                       let modalimg = document.createElement("img");
                       modalimg.classList.add("modalimg");
+                      modalimg.setAttribute("src", pokemon.imageUrl); 
+
                       let pokestats = document.createElement("div");
                       pokestats.classList.add("pokestats");   
                       let poketype = document.createElement("p");
@@ -98,85 +94,45 @@
                       let pokeweight = document.createElement("p");
                       
                     //fills all the Pokemonelements with content
-                      modalimg.setAttribute("src", pokemon.imageUrl);  
+               
                       poketype.innerText = "type: " + pokemon.types ;
                       pokeheight.innerText = "height: " + pokemon.height + " feed";
                       pokeweight.innerText = "weight: " + pokemon.weight + " lbs";
-                      
-                  //let all the Elements of the Modal append
-                      modalContainer.appendChild(profoak);  
-                      modal.appendChild(closeButtonElement);
-                      modal.appendChild(titleElement);
-                      modal.appendChild(modalimg);
-                      modal.appendChild(pokestats);
+            
+                     
+                     // modalbody.appendChild(closeButtonElement);
+      
+                      modalbody.appendChild(modalimg);
+                      modalbody.appendChild(pokestats);
                       pokestats.appendChild(poketype);
                       pokestats.appendChild(pokeheight);
                       pokestats.appendChild(pokeweight);
+                     
                       
-                      
-                    //let the modal elemenst append
-
-                      modalContainer.appendChild(modal);
-                      modalcon.appendChild(modalContainer);                      
-                      modalContainer.classList.add('is-visible');
+                    //let the modal elements appen
 
 
-                      function colorchange(pokemon) {
-                        if (showModal.innerHTML.contains("FIRE")) {
-                            modal.classList.add('red')        
-                        }
+                     // function colorchange(pokemon) {
+                       // if (showModal.innerHTML.contains("FIRE")) {
+                         //   modal.classList.add('red')        
+                        //}
 
 
 
 
 
-                    }
-                    
-                    window.addEventListener('keydown', (e) => {
-                        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-                          hideModal();  
-                        }
-                      });
-                      modalContainer.addEventListener('click', (e) => {
-                       
-                        let target = e.target;
-                        if (target === modalContainer) {
-                          hideModal();
-                        }
-                      });
+                   // }
 
-                   
-                    //hides the modal 
-                    function hideModal() {
-                      let modalContainer = document.querySelector('.modal-container');
-                     // modalContainer.classList.remove('is-visible');
-                      //modalContainer.classList.remove('modal-container');
-                     // profoak.classList.add("hide");
-                      
-                      modalContainer.parentNode.removeChild(modalContainer);
-                  
+             
                  
-                     //hide the modal when clicked the escape button
-                      window.addEventListener('keydown', (e) => {
-                        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-                          hideModal();  
-                        }
-
-                     //hide the modal when clicked outside of the modal   
-                      });
-                      modalContainer.addEventListener('click', (e) => {
-                        let target = e.target;
-                        if (target === modalContainer) {
-                          hideModal();
-                        }
-                      });
+            
 
                     
                     
                     
                     }
                   
-                }
+                
             
                   
                   
