@@ -1,3 +1,16 @@
+header{
+
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    background-color: linear-gradient(180deg, #f1c78e, rgb(247, 238, 226))
+}
+
+#logo_pikachu{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    background-color: linear-gradient(180deg, #f1c78e, rgb(247, 238, 226))
+}
+
 body{
 color: red; 
 background-color: white;
@@ -15,7 +28,7 @@ width: 200px;
     height: 100%;
     width: 500px;
     position: relative;
-
+    
     
     
     }
@@ -194,4 +207,9 @@ height: 100%;
 
 display: none;
 
+}
+
+#pokeball{
+
+    float: right;
 }
