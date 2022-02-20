@@ -1,0 +1,43 @@
+#pokeball{
+width: 2rem;
+height: 2rem; 
+float: right;
+
+
+}
+ul.list-group{
+    display: grid;
+    grid-column: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 20px;
+    padding-inline-start: 0;
+    background-color: rgb(247, 238, 226);
+    list-style: none;
+}
+
+.group-list-item {
+    
+    padding-inline-start: 0;
+    background-color: rgb(247, 238, 226);
+    
+
+
+}
+
+.btn.btn-primary{
+    display:grid;
+    background-color: rgb(247, 238, 226);
+    color: black;
+    border-color: cadetblue;
+
+}
+.btn.btn-primary:hover{
+    background-color: cadetblue;
+}
+
+#modalimg{
+
+height: 20px;
+width: 20px;
+
+}
