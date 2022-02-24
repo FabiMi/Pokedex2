@@ -1,3 +1,4 @@
+
 // create IIFE repository  
   let pokemonRepository = (function() {
         
@@ -48,15 +49,15 @@
                 button.appendChild(imgDiv);
             })                  
     //add a click event witch runs the showdetails function    
-                button.addEventListener("click", function (event) {
+                button.addEventListener("click", function () {
                           showDetails(pokemon);
                  });
-             };
+             }
     //log the pokemondetails when clicked
                 function showDetails(item){
                     pokemonRepository.loadDetails(item).then(function (pokemon) {
                         showModal(pokemon);
-                })};
+                })}
 
 
     //creates  the modal elements           
@@ -64,7 +65,8 @@
                   // creates all the Pokemon ELements in the Modal
                       let titleElement = document.getElementById('modal-title');
                       titleElement.innerText = pokemon.name;
-                      let modalbody= document.getElementById('modal-body')
+                      let modalbody = document.getElementById('modal-body');
+                      modalbody.innerText = ""; 
                       let modalimg = document.createElement("img");
                       modalimg.classList.add("modalimg");
                       modalimg.setAttribute("src", pokemon.imageUrl); 
@@ -89,7 +91,7 @@
                       pokestats.appendChild(pokeweight);
                      
                   // deletes the created contend in the modal
-                      modalbody.dispose(modalimg);                    
+                    //  modalbody.dispose(modalimg);                    
                     }
                   
 
