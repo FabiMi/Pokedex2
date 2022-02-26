@@ -25,13 +25,41 @@ ul.list-group{
     background-color: rgb(247, 238, 226);
     color: black;
     border-color: cadetblue;
+    text-transform: capitalize;
 }
 
 .btn.btn-primary:hover{
     background-color: cadetblue;
 }
 
-#modalimg{
-    height: 20px;
-    width: 20px;
+.modalimg{
+    height: 200px;
+    width: 200px;
+    margin-left: 140px;
+}
+
+.modal-header{
+    background-color: blanchedalmond;
+
+
+}
+
+.modal-title{
+    text-transform: uppercase;
+    margin-left: 170px;
+}
+
+.pokestats{
+    display: flex;
+    justify-content: space-between;
+    
+
+
+}
+
+.pokestats p {
+    margin-right: 10px;
+    color: cadetblue;
+
+
 }
