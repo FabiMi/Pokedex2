@@ -37,7 +37,7 @@ API Integration
 
 ![ScreenShot](https://github.com/FabiMi/Pokedex2/blob/main/img/Screenshot%202023-07-19%20at%2016.57.48.png)
 
-[ScreenShot](https://github.com/FabiMi/Pokedex2/blob/main/img/Screenshot%202023-07-19%20at%2016.57.35.png)
+![ScreenShot](https://github.com/FabiMi/Pokedex2/blob/main/img/Screenshot%202023-07-19%20at%2016.57.35.png)
 
 
 
