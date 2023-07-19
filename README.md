@@ -2,7 +2,6 @@ Pokédex
 
 Pokédex is a JavaScript and jQuery-based application that fetches data from an API to create a digital encyclopedia of Pokémon. It allows users to browse and search for information about different Pokémon species.
 
-Pokédex
 
 Features
 
