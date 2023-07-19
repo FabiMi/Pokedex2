@@ -71,15 +71,20 @@
                       modalimg.classList.add("modalimg");
                       modalimg.setAttribute("src", pokemon.imageUrl); 
 
-                      let profoak = document.createElement('img');
-                      profoak.classList.add("profoak");
-                      profoak.setAttribute("src", "../img/Daco_4578050.png"); 
+                     
 
                       let pokestats = document.createElement("div");
                       pokestats.classList.add("pokestats");   
                       let poketype = document.createElement("p");
                       let pokeheight = document.createElement("p");
                       let pokeweight = document.createElement("p");
+
+
+
+
+                      let profoak = document.createElement('img');
+                      profoak.classList.add("profoak");
+                      profoak.setAttribute("src", "../img/Daco_4578050.png"); 
                       
                   //fills all the Pokemonelements with content
                       poketype.innerText = "type: " + pokemon.types ;
