@@ -34,6 +34,15 @@ The detailed view shows the Pokémon's name, image, type(s), abilities, and othe
 Use the navigation buttons (if available) to switch between different Pokémon.
 API Integration
 
+
+![ScreenShot](https://github.com/FabiMi/Pokedex2/blob/main/img/Screenshot%202023-07-19%20at%2016.57.48.png)
+
+[ScreenShot](https://github.com/FabiMi/Pokedex2/blob/main/img/Screenshot%202023-07-19%20at%2016.57.35.png)
+
+
+
+
+
 This Pokédex utilizes the PokéAPI, a free and open API for Pokémon data. It retrieves information such as Pokémon names, images, types, abilities, and more from the API to provide a comprehensive Pokédex experience.
 
 Dependencies
