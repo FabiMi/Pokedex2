@@ -71,6 +71,10 @@
                       modalimg.classList.add("modalimg");
                       modalimg.setAttribute("src", pokemon.imageUrl); 
 
+                      let profoak = document.createElement('img');
+                      profoak.classList.add("profoak");
+                      profoak.setAttribute("src", "../img/Daco_4578050.png"); 
+
                       let pokestats = document.createElement("div");
                       pokestats.classList.add("pokestats");   
                       let poketype = document.createElement("p");
@@ -83,7 +87,8 @@
                       pokeweight.innerText = "weight: " + pokemon.weight + " lbs";
             
                      
-                  // modalbody.appendChild(closeButtonElement);      
+                  // modalbody.appendChild(closeButtonElement);    
+                      modalbody.appendChild(profoak);  
                       modalbody.appendChild(modalimg);
                       modalbody.appendChild(pokestats);
                       pokestats.appendChild(poketype);
